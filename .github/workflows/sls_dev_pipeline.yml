@@ -68,7 +68,7 @@ jobs:
 
       - name: Build
         run: |
-          yarn workspaces focus --production
+          yarn build
 
       - uses: actions/cache@v3
         id: restore-build
