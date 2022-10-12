@@ -4,7 +4,7 @@ name: Simple PR Builder Workflow
 on:
   workflow_call:
     inputs:
-      TEST_COMAMND:
+      TEST_COMMAND:
         description: 'Extra commands to execute as part of test steps'
         type: string
         default: ''
@@ -53,6 +53,6 @@ jobs:
       - name: Run tests
         run: |
           yarn test --passWithNoTests
-          ${{ inputs.TEST_COMAMND }}
+          ${{ inputs.TEST_COMMAND }}
         env:
           CODEARTIFACT_AUTH_TOKEN: ${{ env.CODEARTIFACT_AUTH_TOKEN }}
