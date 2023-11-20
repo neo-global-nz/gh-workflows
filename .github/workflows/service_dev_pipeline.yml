@@ -82,6 +82,7 @@ jobs:
           ecr-name: ${{ inputs.ECR_NAME}}
           ecs-service-name: ${{ inputs.ECS_SERVICE_NAME }}
           code-artifact-auth-token: ${{ env.CODEARTIFACT_AUTH_TOKEN }}
+          code-artifact-auth-token-neo: ${{ env.CODEARTIFACT_AUTH_TOKEN_NEO }}
 
   # deploy-solta-dev:
   #   runs-on: ubuntu-latest
