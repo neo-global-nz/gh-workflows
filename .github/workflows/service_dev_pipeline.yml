@@ -23,6 +23,13 @@ on:
         description: 'Default output for AWS call'
         type: string
         default: 'json'
+      NEO_CODEARTIFACT_AWS_ACCESS_KEY_ID:
+        description: 'NEO AWS Access Key Id for CodeArtifact package retriever'
+        required: false
+      NEO_CODEARTIFACT_AWS_ACCESS_KEY_SECRET:
+        description: 'NEO AWS Access Key Secret for CodeArtifact package retriever'
+        required: false
+
 
     secrets:
       SHARED_GH_ACTIONS_SSH_KEY:
@@ -45,12 +52,6 @@ on:
       DEV_AWS_ACCESS_KEY_SECRET:
         description: 'AWS Access Key Secret for SANDBOX environment'
         required: true
-      NEO_CODEARTIFACT_AWS_ACCESS_KEY_ID:
-        description: 'NEO AWS Access Key Id for CodeArtifact package retriever'
-        required: false
-      NEO_CODEARTIFACT_AWS_ACCESS_KEY_SECRET:
-        description: 'NEO AWS Access Key Secret for CodeArtifact package retriever'
-        required: false
 
 jobs:
   build:
