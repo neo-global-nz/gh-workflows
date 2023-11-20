@@ -45,6 +45,12 @@ on:
       DEV_AWS_ACCESS_KEY_SECRET:
         description: 'AWS Access Key Secret for SANDBOX environment'
         required: true
+      NEO_CODEARTIFACT_AWS_ACCESS_KEY_ID:
+        description: 'NEO AWS Access Key Id for CodeArtifact package retriever'
+        required: false
+      NEO_CODEARTIFACT_AWS_ACCESS_KEY_SECRET:
+        description: 'NEO AWS Access Key Secret for CodeArtifact package retriever'
+        required: false
 
 jobs:
   build:
@@ -67,6 +73,8 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.CODEARTIFACT_AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.CODEARTIFACT_AWS_ACCESS_KEY_SECRET }}
+          neo-aws-access-key-id: ${{ secrets.NEO_CODEARTIFACT_AWS_ACCESS_KEY_ID }}
+          neo-aws-secret-access-key: ${{ secrets.NEO_CODEARTIFACT_AWS_ACCESS_KEY_SECRET }}
 
       - name: Build & Store ECS Image
         uses: ./.github/actions/neo/build-ecs-image
