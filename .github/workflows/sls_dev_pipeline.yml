@@ -55,6 +55,8 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.CODEARTIFACT_AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.CODEARTIFACT_AWS_ACCESS_KEY_SECRET }}
+          neo-aws-access-key-id: ${{ secrets.NEO_CODEARTIFACT_AWS_ACCESS_KEY_ID }}
+          neo-aws-secret-access-key: ${{ secrets.NEO_CODEARTIFACT_AWS_ACCESS_KEY_SECRET }}
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -65,6 +67,7 @@ jobs:
         uses: ./.github/actions/neo/install-from-cache
         with:
           codeartifact-auth-token: ${{ env.CODEARTIFACT_AUTH_TOKEN }}
+          codeartifact-auth-token-neo: ${{ env.CODEARTIFACT_AUTH_TOKEN_NEO }}
 
       - name: Build
         run: |
