@@ -59,6 +59,7 @@ jobs:
         uses: ./.github/actions/neo/install-from-cache
         with:
           codeartifact-auth-token: ${{ env.CODEARTIFACT_AUTH_TOKEN }}
+          codeartifact-auth-token-neo: ${{ env.CODEARTIFACT_AUTH_TOKEN_NEO }}
 
       - name: Run tests
         run: |
